@@ -1,0 +1,320 @@
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #082B59; /* Dark Blue Background */
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    color: #082B59; 
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: #D98555; 
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Link styles */
+a {
+    color: #59331d; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #D98555;
+}
+
+/* Header and Navigation */
+header {
+    background-color: #131D26; 
+    padding: 1rem 0;
+    border-bottom: 10px solid #D98555; 
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav li {
+    font-size: 1.3rem;
+}
+
+nav .logo img {
+    max-width: 150px;
+}
+
+nav a {
+    color: white;
+    display: block;
+}
+
+nav a:hover {
+    color: #D98555;
+}
+
+/* Footer */
+footer {
+    background-color: #131D26;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 2rem 0;
+    border-top: 10px solid #D98555;
+}
+.footer-image {
+    width: 100%; 
+    max-width: 3000px; 
+    margin-top: 1.5rem; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    border-radius: 10px; 
+}
+footer ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+footer a {
+    color: #f2f2f2;
+    font-size: 1.5rem;
+}
+
+footer a:hover {
+    color: #D98555;
+}
+
+/* Button styles */
+.button {
+    background-color: #59331D; 
+    color: #f2f2f2;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.button:hover {
+    background-color: #D98555;
+    color: #59331D;
+}
+
+/* Image styling for responsiveness */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+figure img {
+    border-radius: 10px;
+}
+
+figcaption {
+    color: #f2f2f2;
+    padding: 1rem;
+    background-color: #59331D;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Layout containers */
+.main, .contact-main, .product-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.main-bkgd, .contact-main-bkgd {
+    background-color: #ffffff;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding-bottom: 3rem;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.article, .contact-info, .product-info {
+    flex-basis: 48%;
+}
+
+.article {
+    flex-basis: 65%;
+}
+
+.figure {
+    flex-basis: 30%;
+}
+
+/* Contact form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-form label {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 0.75rem;
+    border: 2px solid #59331D;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.contact-form button {
+    padding: 0.75rem;
+    background-color: #59331D;
+    color: #f2f2f2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #D98555;
+    color: #59331D;
+}
+
+/* Product page grid */
+.product-grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-item {
+    background-color: #f2f2f2;
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.product-item img {
+    margin-bottom: 1rem;
+}
+
+.product-item h3 {
+    font-size: 1.5rem;
+}
+
+.product-item p {
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+
+/* Media Queries for Responsiveness */
+
+/* Large screens (tablets, laptops, desktops) */
+@media (min-width: 769px) {
+
+    /* Ensure grid-based layouts are used */
+    .main {
+        flex-direction: row;
+    }
+
+    /* About image: horizontal orientation on desktop */
+    .main figure img {
+        object-fit: cover;
+        height: 300px;
+    }
+
+    /* Product grid: Three columns */
+    .product-grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Medium screens (tablets) */
+@media (max-width: 768px) {
+    .main {
+        flex-direction: column;
+    }
+
+    /* About image: vertical orientation on tablet */
+    .main figure img {
+        object-fit: cover;
+        height: 400px;
+    }
+
+    .product-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Contact form buttons are larger on mobile */
+    .contact-form button {
+        padding: 1rem;
+        font-size: 1.2rem;
+    }
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+    .main {
+        flex-direction: column;
+    }
+
+    .main-bkgd {
+        padding: 1rem;
+    }
+
+    /* About image: smaller horizontal orientation on mobile */
+    .main figure img {
+        object-fit: cover;
+        height: 200px;
+    }
+
+    /* Product grid: single column on mobile */
+    .product-grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item {
+        padding: 1rem;
+    }
+
+    /* Contact form inputs and buttons adjusted for smaller screens */
+    .contact-form input,
+    .contact-form textarea {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .contact-form button {
+        padding: 0.75rem;
+        font-size: 1.1rem;
+    }
+}
+
